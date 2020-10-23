@@ -1,0 +1,316 @@
+/* 1st example
+inspired from :
+- http://stackoverflow.com/questions/25573562/wrapping-a-youtube-video-in-a-static-image-frame-and-maintain-responsive-resiz
+- http://jsfiddle.net/4g9e3ywy/ */
+div.laptop-wrapper {
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 67.5%;
+    height: 0;
+}
+div.laptop-wrapper iframe {
+    box-sizing: border-box;
+    background: url(https://i.stack.imgur.com/zZNgk.png) center center no-repeat;
+    background-size: contain;
+    padding: 11.9% 15.5% 14.8%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2nd example :  BACKGROUND IMAGE */
+div.desktop-wrapper {
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 67.5%;
+    height: 100%;
+    width: 100%;
+}
+div.desktop-wrapper iframe {
+    box-sizing: border-box;
+    background: url(http://img01.deviantart.net/05b6/i/2011/030/8/5/apple_led_cinema_screen_by_fisshy94-d38e3o5.png) center center no-repeat;
+    background-size: contain;
+    padding: 3.4% 10.8% 18.6%;/* 11.9% 15.5% 14.8% */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 3rd example :  BACKGROUND IMAGE */
+.header-unit {
+  height: 150px;
+  border: 2px solid #000;
+  border-right:none;
+  border-left: none;
+  position: relative;
+  padding: 20px;
+}
+#video-container {
+	position: absolute;
+}
+#video-container {
+	top:0%;
+	left:0%;
+	height:100%;
+	width:300%;
+	overflow: hidden;
+}
+video {
+	position:absolute;
+	z-index:0;
+}
+video.fillWidth {
+	width: 100%;
+}
+*, 
+*::after, 
+*:after,
+*::before, 
+*:before { box-sizing: border-box; }
+:root {
+	--bg-color: #cfd8dc;
+	--font-base: 16px;
+	--gutter: var(--font-base);
+	--card-shadow: rgba(0,0,0,.4) 0 3px 4px;
+}	
+
+
+main { 
+	padding: 1rem; 
+	padding-bottom: 0;
+}
+main .main-title { text-align: center; }
+
+
+/*------------------*\
+	GALLERY
+\*------------------*/
+.Gallery {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+/* .Gallery > * { outline: 4px solid steelblue; } */
+	.Gallery-article {
+		border-radius: .5em;
+		margin-bottom: var(--gutter);
+		overflow: hidden;
+		box-shadow: var(--card-shadow);
+	}
+	.Gallery-image { 
+		display: block;
+		width: 100%;
+	}
+
+@media screen and (min-width: 400px) {
+	.Gallery {
+		width: 80%; 
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media screen and (min-width: 620px) {
+	.Gallery-article { 
+		width: calc((100% / 2) - var(--gutter));
+	}
+	.Gallery-article:nth-child(even) { margin-left: var(--gutter); }
+}
+@media screen and (min-width: 920px) {
+	.Gallery-article { 
+		width: calc((100% / 3)) - var(--gutter)s;
+	}
+}
+div.noticia {
+    width: 50%;
+    margin: 20px auto;
+    color: #fff;
+    padding: 15px;
+  }
+  div.noticia a {
+    font-family: "Asfalto";
+    color: black;
+    font-size: 25px;
+  }
+  div.noticia img.izquierda {
+    float: left;
+    margin-right: 10px;
+
+  }
+  
+  div.noticia img.derecha {
+    float: right;
+    margin-left: 10px;
+  
+  }
+  
+  div.reset {
+    clear: both;
+  }
+
+
+body,html{margin:0;padding:0;height:100%;}
+body{
+  background:url('https://unsplash.it/1228/880?image=302')  no-repeat center center fixed;
+  background-size:cover;
+  font-family: 'Cabin Condensed', sans-serif;
+  text-align: center;
+ 
+  width:100%;
+  height:100%;
+
+}
+@import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
+
+html, body { height: 100%; }
+
+h1 {
+ font-size:5em;
+ font:bold 7.5vw/1.6 'Signika', sans-serif;
+ user-select:none;
+}
+
+h1 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+ @keyframes float {
+  0%,100%{ transform:none; }
+  33%{ transform:translateY(-1px) rotate(-2deg); }
+  66%{ transform:translateY(1px) rotate(2deg); }
+}
+body:hover span { animation:bounce .6s; }
+@keyframes bounce {
+  0%,100%{ transform:translate(0); }
+  25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+}
+
+span:nth-child(4n) { color:hsl(50, 75%, 55%); text-shadow:1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); }
+span:nth-child(4n-1) { color:hsl(135, 35%, 55%); text-shadow:1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); }
+span:nth-child(4n-2) { color:hsl(155, 35%, 60%); text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); }
+span:nth-child(4n-3) { color:hsl(30, 65%, 60%); text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); }
+
+h1 span:nth-child(2){ animation-delay:.05s; }
+h1 span:nth-child(3){ animation-delay:.1s; }
+h1 span:nth-child(4){ animation-delay:.15s; }
+h1 span:nth-child(5){ animation-delay:.2s; }
+h1 span:nth-child(6){ animation-delay:.25s; }
+h1 span:nth-child(7){ animation-delay:.3s; }
+h1 span:nth-child(8){ animation-delay:.35s; }
+h1 span:nth-child(9){ animation-delay:.4s; }
+h1 span:nth-child(10){ animation-delay:.45s; }
+h1 span:nth-child(11){ animation-delay:.5s; }
+h1 span:nth-child(12){ animation-delay:.55s; }
+h1 span:nth-child(13){ animation-delay:.6s; }
+h1 span:nth-child(14){ animation-delay:.65s; }
+/* 
+  Based from this article from Divya Manian - 
+  http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html
+*/
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+:before,
+:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    position: relative;
+    margin: 0 auto 1em;
+    padding: 1em 1em .25em 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.title:after {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    margin-left: -120px;
+    content: '';
+    background-color: #fff;
+}
+
+/* Clip text element */
+.clip-text {
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+
+    text-align: center;
+    /* Color fallback */
+    color: #fff;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+    position: absolute;
+    content: '';
+}
+
+/* Background */
+.clip-text:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+/* Text Background (black zone) */
+.clip-text:after {
+    position: absolute;
+    z-index: -1;
+    top: .125em;
+    right: .125em;
+    bottom: .125em;
+    left: .125em;
+    background-color: #000;
+}
+
+/* Change the background position to display letter when the black zone isn't here */
+.clip-text--no-textzone:before {
+    background-position: -.65em 0;
+}
+
+.clip-text--no-textzone:after {
+    content: none;
+}
+
+/* Use Background-size cover for photo background and no-repeat background */
+.clip-text--cover,
+.clip-text--cover:before {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
+
+/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
+.clip-text_one {
+  background-image: linear-gradient(90deg, rgba(120, 133, 62, 1) 0%, rgba(44, 179, 214, 1) 44%, rgba(44, 179, 214, 1) 55%, rgba(193, 73, 5, 1) 100%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-background-clip: text;
+  background-clip: text; /* in the future? */  
+  color: transparent;
+}
+
